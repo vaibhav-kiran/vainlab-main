@@ -2,8 +2,8 @@ const HowItWorks = () => {
   return (
     <div className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-3xl font-extrabold text-foreground text-center sm:text-4xl">How It Works</h2>
-        <div className="mt-12 space-y-8">
+        <h2 className="text-3xl font-extrabold text-foreground text-center sm:text-4xl mb-12">How It Works</h2>
+        <div className="dark-glass-box space-y-8">
           <div className="flex items-start">
             <div className="flex-shrink-0 h-10 w-10 flex items-center justify-center border border-primary rounded-full text-primary font-bold">1</div>
             <div className="ml-4">

@@ -72,6 +72,10 @@
     @apply bg-[hsl(var(--glass-bg)/0.8)] backdrop-blur-2xl border border-[hsl(var(--glass-border)/0.15)];
   }
 
+  .dark-glass-box {
+    @apply bg-card/80 backdrop-blur-lg border border-primary/30 rounded-2xl p-8;
+  }
+
   .gradient-text {
     @apply bg-gradient-to-tr from-[hsl(var(--gradient-gold))] via-[hsl(var(--gradient-amber))] to-[hsl(var(--gradient-warm))] bg-clip-text text-transparent;
   }
