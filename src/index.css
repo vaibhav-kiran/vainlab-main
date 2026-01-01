@@ -173,6 +173,39 @@
     opacity: 0;
   }
 
+  /* Cinematic hero animations */
+  .animate-hello-typing {
+    animation: hello-typing 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .animate-hello-fade-out {
+    animation: hello-fade-out 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .animate-cursor-blink {
+    display: inline-block;
+    animation: cursor-blink 1s ease-in-out infinite;
+    margin-left: 2px;
+    color: hsl(var(--gradient-gold));
+    opacity: 0.8;
+  }
+
+  .animate-main-text-reveal {
+    animation: main-text-reveal 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+
+  .animate-text-sharpen {
+    animation: text-sharpen 1.5s cubic-bezier(0.4, 0, 0.2, 1) 1.5s forwards;
+  }
+
+  .animate-buttons-emerge {
+    animation: buttons-emerge 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
   .group:hover .light-sweep::before {
     animation: light-sweep 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
   }
@@ -245,5 +278,77 @@
   50% {
     transform: scale(1.05);
     opacity: 0.3;
+  }
+}
+
+/* Cinematic hero animation keyframes */
+@keyframes hello-typing {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hello-fade-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes cursor-blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes main-text-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    filter: blur(4px);
+  }
+  60% {
+    opacity: 0.8;
+    transform: translateY(10px) scale(0.98);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes text-sharpen {
+  0% {
+    filter: brightness(1) contrast(1);
+    text-shadow: 0 0 10px hsl(var(--gradient-gold) / 0.4), 0 0 40px hsl(var(--gradient-gold) / 0.2);
+  }
+  100% {
+    filter: brightness(1.1) contrast(1.05);
+    text-shadow: 0 0 15px hsl(var(--gradient-gold) / 0.5), 0 0 50px hsl(var(--gradient-gold) / 0.3);
+  }
+}
+
+@keyframes buttons-emerge {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
   }
 }
