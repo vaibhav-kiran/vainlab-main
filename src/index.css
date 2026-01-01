@@ -69,11 +69,13 @@
   }
 
   .glass-strong {
-    @apply bg-[hsl(var(--glass-bg)/0.8)] backdrop-blur-2xl border border-[hsl(var(--glass-border)/0.15)];
+    @apply bg-[hsl(var(--glass-bg)/0.8)] backdrop-blur-2xl border border-[hsl(var(--glass-border)/0.15)] rounded-2xl;
+    box-shadow: 0 0 15px -5px hsl(var(--primary)/0.4); /* Added glow */
   }
 
   .dark-glass-box {
     @apply bg-card/80 backdrop-blur-lg border border-primary/30 rounded-2xl p-8;
+    box-shadow: 0 0 15px -5px hsl(var(--primary)/0.4); /* Added glow */
   }
 
   .gradient-text {

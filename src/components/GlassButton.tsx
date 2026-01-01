@@ -20,7 +20,7 @@ const GlassButton = ({ to, children, subtitle, className, variant = 'primary' }:
         "hover:scale-105 active:scale-100",
         variant === 'primary' 
           ? "hover:shadow-[0_0_60px_-10px_hsl(var(--gradient-gold)/0.6)]"
-          : "hover:shadow-[0_0_40px_-15px_hsl(var(--gradient-silver)/0.3)]",
+          : "hover:shadow-[0_0_60px_-10px_hsl(var(--gradient-gold)/0.6)]",
         "active:glow-pulse",
         "light-sweep",
         className
@@ -31,7 +31,7 @@ const GlassButton = ({ to, children, subtitle, className, variant = 'primary' }:
         "absolute inset-0 rounded-2xl transition-opacity duration-500 p-[1px]",
         variant === 'primary'
           ? "opacity-20 group-hover:opacity-100 gradient-border"
-          : "opacity-10 group-hover:opacity-50 border-gradient-silver"
+          : "opacity-20 group-hover:opacity-100 gradient-border"
       )}>
         <div className="w-full h-full rounded-2xl bg-background/80" />
       </div>

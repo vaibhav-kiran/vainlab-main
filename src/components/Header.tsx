@@ -10,12 +10,12 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg transition-all duration-300">
-      <div className="container mx-auto flex items-center justify-between px-6 py-4">
-        <div className="text-xl font-bold gradient-text">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50 transition-all duration-300">
+      <div className="container mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-4 sm:py-5">
+        <div className="text-xl sm:text-2xl font-bold gradient-text">
           VAIN LABS
         </div>
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-6 lg:gap-8">
           {navItems.map((item) => (
             <Link
               key={item.to}
@@ -23,9 +23,9 @@ const Header = () => {
               smooth={true}
               duration={500}
               offset={-80}
-              className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors cursor-pointer"
-              activeClass="nav-link-active" // Add this for glowing underline
-              spy={true} // Enables spy scrolling for active class
+              className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors duration-300 cursor-pointer"
+              activeClass="nav-link-active"
+              spy={true}
             >
               {item.label}
             </Link>

@@ -17,60 +17,56 @@ const Index = () => {
       
       {/* Main Content */}
       <main className="relative z-10">
-        <div className="flex flex-col items-center justify-center min-h-screen px-6 text-center">
-          
-          {/* Headline */}
-          <div className="relative mb-6">
-            <div className="radial-glow-behind" />
-            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
-              <span className="block gradient-text text-glow-premium animate-hero-fade-in-up-1">Hello.</span>
-              <span className="block gradient-text text-glow-premium animate-hero-fade-in-up-2">We build ideas into reality.</span>
-            </h1>
+        {/* Hero Section */}
+        <section className="flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 text-center">
+          <div className="container mx-auto max-w-6xl">
+            {/* Headline */}
+            <div className="relative mb-8 sm:mb-12">
+              <div className="radial-glow-behind" />
+              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight">
+                <span className="block gradient-text text-glow-premium animate-hero-fade-in-up-1">Hello.</span>
+                <span className="block gradient-text text-glow-premium animate-hero-fade-in-up-2 mt-2 sm:mt-4">
+                  We build ideas into reality.
+                </span>
+              </h1>
+            </div>
+            
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-8 animate-cta-fade-in">
+              <GlassButton to="/build" variant="primary">
+                BUILD
+              </GlassButton>
+              <GlassButton to="/buy" variant="secondary">
+                BUY
+              </GlassButton>
+            </div>
           </div>
-
-          {/* Subtext */}
-          <p className="text-lg md:text-xl text-foreground/60 mb-12 tracking-[0.2em]">
-            <span className="animate-subtext-fade-in-1">TECH</span>
-            <span className="mx-2 animate-subtext-fade-in-2">•</span>
-            <span className="animate-subtext-fade-in-2">BIOMEDICAL</span>
-            <span className="mx-2 animate-subtext-fade-in-3">•</span>
-            <span className="animate-subtext-fade-in-3">AI</span>
-            <span className="mx-2 animate-subtext-fade-in-4">•</span>
-            <span className="animate-subtext-fade-in-4">IOT</span>
-          </p>
-          
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 sm:gap-10 animate-cta-fade-in">
-            <GlassButton to="/build" subtitle="Custom-built from your idea" variant="primary">
-              BUILD
-            </GlassButton>
-            <GlassButton to="/buy" subtitle="Instant access to ready projects" variant="secondary">
-              BUY
-            </GlassButton>
-          </div>
-          
-          {/* Trust Detail */}
-          <p className="mt-10 text-sm text-foreground/40 animate-trust-fade-in">
-            Engineering real-world solutions. Not templates.
-          </p>
-        </div>
+        </section>
         
-        <div id="why-us">
+        {/* Content Sections */}
+        <section id="why-us" className="scroll-mt-20">
           <WhyVainLabs />
-        </div>
-        <div id="what-we-do">
+        </section>
+        
+        <section id="what-we-do" className="scroll-mt-20">
           <WhatWeDo />
-        </div>
-        <div id="who-we-build-for">
+        </section>
+        
+        <section id="who-we-build-for" className="scroll-mt-20">
           <WhoWeBuildFor />
-        </div>
-        <div id="how-it-works">
+        </section>
+        
+        <section id="how-it-works" className="scroll-mt-20">
           <HowItWorks />
-        </div>
-        <div id="why-choose-us">
+        </section>
+        
+        <section id="why-choose-us" className="scroll-mt-20">
           <WhyChooseUs />
-        </div>
-        <CallToAction />
+        </section>
+        
+        <section className="scroll-mt-20">
+          <CallToAction />
+        </section>
       </main>
       
       <Footer />
