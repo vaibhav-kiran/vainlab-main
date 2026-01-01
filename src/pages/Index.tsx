@@ -7,6 +7,7 @@ import WhatWeDo from '@/components/landing/WhatWeDo';
 import WhoWeBuildFor from '@/components/landing/WhoWeBuildFor';
 import HowItWorks from '@/components/landing/HowItWorks';
 import WhyChooseUs from '@/components/landing/WhyChooseUs';
+import CallToAction from '@/components/landing/CallToAction';
 
 const Index = () => {
   return (
@@ -69,6 +70,7 @@ const Index = () => {
         <div id="why-choose-us">
           <WhyChooseUs />
         </div>
+        <CallToAction />
       </main>
       
       <Footer />
