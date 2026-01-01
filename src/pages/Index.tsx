@@ -1,4 +1,4 @@
-import AuroraBackground from '@/components/AuroraBackground';
+import React from 'react';
 import GlassButton from '@/components/GlassButton';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
@@ -9,11 +9,15 @@ import HowItWorks from '@/components/landing/HowItWorks';
 import WhyChooseUs from '@/components/landing/WhyChooseUs';
 import CallToAction from '@/components/landing/CallToAction';
 
+const AuroraBackground = React.lazy(() => import('@/components/AuroraBackground'));
+
 const Index = () => {
   return (
     <div className="relative min-h-screen overflow-hidden">
       <Header />
-      <AuroraBackground />
+      <React.Suspense fallback={<div>Loading background...</div>}>
+        <AuroraBackground />
+      </React.Suspense>
       
       {/* Main Content */}
       <main className="relative z-10">
