@@ -14,4 +14,27 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('@radix-ui') || id.includes('react-router-dom')) {
+              return 'react-vendor';
+            }
+            if (id.includes('vanta') || id.includes('three')) {
+              return 'vanta-three';
+            }
+            if (id.includes('@supabase/supabase-js')) {
+              return 'supabase-client';
+            }
+            if (id.includes('react') || id.includes('react-dom')) {
+              return 'react-vendor';
+            }
+            return 'vendor'; // all other third-party dependencies
+          }
+        },
+      },
+    },
+  },
 }));
