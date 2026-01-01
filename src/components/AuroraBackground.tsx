@@ -23,11 +23,11 @@ const AuroraBackground = ({ isStatic = false }: AuroraBackgroundProps) => {
           minWidth: 200.00,
           scale: 1.00,
           scaleMobile: 1.00,
-          color: 0xd4a574,
-          backgroundColor: 0x0a0a0f,
-          points: isStatic ? 8.00 : 12.00,
-          maxDistance: 22.00,
-          spacing: 18.00,
+          color: 0xd4a574, // Gold/orange accent color
+          backgroundColor: 0x0a0a0f, // Dark background
+          points: isStatic ? 6.00 : 8.00, // Reduced points for less density
+          maxDistance: 30.00, // Increased max distance for more spread
+          spacing: 25.00, // Increased spacing for more spread
           showDots: true,
         })
       );
@@ -53,7 +53,21 @@ const AuroraBackground = ({ isStatic = false }: AuroraBackgroundProps) => {
 
   return (
     <>
+      {/* Background Layer: Faint, slow, slightly blurred (static CSS glow) */}
+      <div className="fixed inset-0 -z-20">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,165,116,0.05)_0%,transparent_70%)] blur-2xl animate-pulse-slow" />
+      </div>
+
+      {/* Mid-Layer: Vanta.js particles */}
       <div ref={vantaRef} className="fixed inset-0 -z-10" />
+
+      {/* Foreground Layer: Few, brighter, very slow movement (subtle animated radial gradient) */}
+      <div className="fixed inset-0 z-0 pointer-events-none opacity-20 animate-foreground-glow">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.02)_0%,transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.01)_0%,transparent_30%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.01)_0%,transparent_30%)]" />
+      </div>
+
       {/* Subtle vignette overlay */}
       <div className="fixed inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,transparent_0%,hsl(222,47%,5%)/0.5_70%)]" />
     </>
